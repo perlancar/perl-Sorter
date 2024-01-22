@@ -1,0 +1,147 @@
+0.120   2020-05-25  Released-By: PERLANCAR; Urgency: medium
+
+        - Edit Changes.
+
+
+0.119   2020-05-25  Released-By: PERLANCAR; Urgency: medium; Backward-Compatible: no
+
+	- [ux] Add tab completion for 'sort_sub' and 'sort_args' arguments.
+
+        - [incompatible change] 'sort_args' argument is now an array, not a
+          hash.
+
+
+0.118   2020-02-28  Released-By: PERLANCAR; Urgency: medium
+
+	- Introduce meta property: compares_record.
+
+        - Add sorters: record_by_order, record_by_reverse_order.
+
+
+0.117   2020-02-28  Released-By: PERLANCAR; Urgency: medium
+
+	- get_sorter(): accept third argument $with_meta to allow it to
+	  return metadata.
+
+
+0.116   2019-12-15  Released-By: PERLANCAR; Urgency: low
+
+	- No functional changes.
+
+	- [doc] Mention sorted.
+
+
+0.115   2019-12-15  Released-By: PERLANCAR; Urgency: medium
+
+	- Add sorters: by_perl_function, by_perl_op, by_perl_code, by_rand
+	  (randomly).
+
+	- [doc] Mention related (supporting) modules.
+
+
+0.114   2019-12-15  Released-By: PERLANCAR; Urgency: medium
+
+	- Add meta().
+
+
+0.113   2019-12-15  Released-By: PERLANCAR; Urgency: medium
+
+	- Use sortsub::spec Sah schema.
+
+
+0.112   2019-12-14  Released-By: PERLANCAR; Urgency: medium
+
+	- Add functional interface: get_sorter().
+
+        - Add sorters: by_length, asciibetically, numerically.
+
+	- Provide some Rinci metadata for 'sort_sub' and 'sort_args'
+	  function arguments.
+
+
+0.111   2019-10-26  Released-By: PERLANCAR; Urgency: medium
+
+	- Allow passing arguments to gen_sorter().
+
+        - Add sorter: by_count.
+
+
+0.110   2018-01-15  Released-By: PERLANCAR
+
+	- naturally: Use Sort::Naturally instead of using our own algorithm
+	  (better handles more cases). As a consequence, we are now always
+	  case-insensitive since Sort::Naturally is.
+
+
+0.10    2016-12-18  Released-By: PERLANCAR
+
+	- [Incompatible change] Rename modules to by_* to be consistent
+	  with the convention.
+
+
+0.09    2016-12-18  Released-By: PERLANCAR
+
+	- Merge dist Sort-Sub-num_in_text (there's no reason why it should
+	  be a separate dist, no other deps).
+
+
+0.08    2016-12-17  Released-By: PERLANCAR
+
+	- No functional changes.
+
+	- [dist] Use Pod::Weaver plugin Sort::Sub to generate Synopsis etc
+	  section.
+
+
+0.07    2016-12-16  Released-By: PERLANCAR
+
+	- sort_sub_ok(): Make testing of normal/i/r/ir optional depending
+	  on whether the corresponding expected output is specified.
+
+	- [doc] Fix typo in Synopsis.
+
+
+0.06    2016-04-06  Released-By: PERLANCAR
+
+	- [Bugfix] naturally: Use string comparison when either argument is
+	  a non-number.
+
+
+0.05    2016-02-27  Released-By: PERLANCAR
+
+	- All sort sub should use (a,b) argument in addition to checking
+	  for caller's $a and $b.
+
+	- Better diagnostics for Test::Sort::Sub.
+
+
+0.04    2016-02-25  Released-By: PERLANCAR
+
+	- No functional changes.
+
+	- Move t/lib/Local/TestLib to lib/Test/Sort/Sub.pm so it can be
+	  used from other dists.
+
+	- Add module: Sub::Sort to catch common typo.
+
+
+0.03    2015-10-07  Released-By: PERLANCAR
+
+	- Add sorters: ascii_then_num, num_then_ascii.
+
+	- [Bugfix] make the sortsubs work when used from package other than
+	  'main'.
+
+        - [Refactor] Refactor tests (extract into test routine/library).
+
+
+0.02    2015-09-27  Released-By: PERLANCAR
+
+        - No functional changes.
+
+        - Fix a couple of typos in POD.
+
+
+0.01    2015-09-27  Released-By: PERLANCAR
+
+        - First release.

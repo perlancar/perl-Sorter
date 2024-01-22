@@ -7,7 +7,7 @@ package Sorter;
 # VERSION
 
 1;
-# ABSTRACT: Sorter
+# ABSTRACT: Reusable sorter subroutines
 
 =head1 SPECIFICATION VERSION
 

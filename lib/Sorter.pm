@@ -30,6 +30,11 @@ Specifying arguments:
  my $sorter = Sorter::naturally->new(reverse => 1);
  my @sorted = $sorter->(...);
 
+Specifying sorter on the command-line (for other CLI's):
+
+ % customsort -s naturally ...
+ % customsort -s naturally=reverse,1 ...
+
 
 =head1 DESCRIPTION
 
@@ -72,15 +77,17 @@ to generate a sorter.
 
 Base specifications: L<DefHash>, L<Sah>.
 
-Related: L<Comparer>, L<KeyMaker>
+Related: L<Comparer>
 
-Previous incarnation: L<Sort::Sub>. C<Sorter>, C<KeyMaker>, and C<Comparer> are
-meant to eventually supersede Sort::Sub. The main improvement upon Sort::Sub is
-the split into three: 1) a sorter (a subroutine that accepts a list of items to
-sort); 2) a keymaker (a subroutine that converts an item to a string/numeric key
-suitable for simple comparison using C<eq> or C<==> during sorting); and 3)
-comparer (a subroutine that compares two items that can be used in C<sort()>).
-Perl's C<sort()> allows us to specify a comparer, but oftentimes it's more
-efficient to sort by key using a keymaker, and sometimes due to preprocessing
-and/or postprocessing it's more suitable to use the more generic C<sorter>
-interface.
+Previous incarnation: L<Sort::Sub>. C<Sorter> and C<Comparer> are meant to
+eventually supersede Sort::Sub. The main improvement upon Sort::Sub is the split
+into three kinds of subroutines: 1) a sorter (a subroutine that accepts a list
+of items to sort), where C<Sorter::*> modules are meant to generate; 2) a
+keymaker (a subroutine that converts an item to a string/numeric key suitable
+for simple comparison using C<eq> or C<==> during sorting); you can use
+C<Data::Sah::Value::perl::KeyMaker> namespace for this; and 3) comparer (a
+subroutine that compares two items that can be used in C<sort()>), where
+C<Comparer::*> modules are meant to generate. Perl's C<sort()> allows us to
+specify a comparer, but oftentimes it's more efficient to sort by key using a
+keymaker, and sometimes due to preprocessing and/or postprocessing it's more
+suitable to use the more generic C<sorter> interface.

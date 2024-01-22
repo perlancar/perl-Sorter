@@ -91,3 +91,6 @@ C<Comparer::*> modules are meant to generate. Perl's C<sort()> allows us to
 specify a comparer, but oftentimes it's more efficient to sort by key using a
 keymaker, and sometimes due to preprocessing and/or postprocessing it's more
 suitable to use the more generic C<sorter> interface.
+
+C<Sorter> also: 1) makes C<reverse> and C<is_ci> ordinary arguments, because
+they are not always applicable in all situation, especially C<is_ci>.

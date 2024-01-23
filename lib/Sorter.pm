@@ -19,7 +19,7 @@ package Sorter;
 Basic:
 
  use Sorter::naturally;
- my $sorter = Sorter::naturally->new;
+ my $sorter = Sorter::naturally::gen_sorter;
 
  my @sorted = $sorter->('track1.mp3', 'track10.mp3', 'track2.mp3', 'track1b.mp3', 'track1a.mp3');
  # => ('track1.mp3', 'track1a.mp3', 'track1b.mp3', 'track2.mp3', 'track10.mp3')
@@ -27,7 +27,7 @@ Basic:
 Specifying arguments:
 
  use Sorter::naturally;
- my $sorter = Sorter::naturally->new(reverse => 1);
+ my $sorter = Sorter::naturally::gen_sorter(reverse => 1);
  my @sorted = $sorter->(...);
 
 Specifying sorter on the command-line (for other CLI's):
